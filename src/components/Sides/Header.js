@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -12,9 +13,13 @@ function Header() {
         </div>
         <div>
           <ul className="flex items-center">
-            <li className="mx-10">HOME</li>
-            <li className="mx-10">업무분야</li>
-            <li className="mx-10">상담접수 및 비용안내</li>
+            <li className="mx-8">
+              <Link to="/">HOME</Link>
+            </li>
+            <li className="mx-8">
+              <Link to="/service1">업무분야</Link>
+            </li>
+            <li className="mx-8">상담접수 및 비용안내</li>
           </ul>
         </div>
       </div>
