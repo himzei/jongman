@@ -27,16 +27,14 @@ function MainPage() {
 
   return (
     <>
-      <div
-        className="absolute top-0 "
-        style={{
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1128&q=80')",
-        }}
-      ></div>
-      <div className="max-w-7xl py-4 mx-auto flex justify-between my-20">
+      <div className="">
+        <img
+          className="relative -top-28 w-full h-screen"
+          src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1128&q=80"
+          alt="aa"
+        />
+      </div>
+      <div className="max-w-7xl py-4 mx-auto flex justify-between my-20 ">
         <div className="flex flex-col w-1/2">
           <h4 className="text-sm text-green-600">DAEGYOTAX</h4>
           <h2 className="text-3xl font-medium text-green-600">
