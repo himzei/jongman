@@ -5,21 +5,21 @@ function Header() {
   return (
     <>
       <div
-        className="max-w-7xl py-4 mx-auto font-medium flex items-center justify-between"
+        className="max-w-7xl py-3 mx-auto font-medium flex items-center justify-between"
         style={{ zIndex: 2, position: "relative" }}
       >
         <div>
           <img src="images/logo.png" alt="logo" width="200px" />
         </div>
         <div>
-          <ul className="flex items-center">
-            <li className="mx-8">
+          <ul className="flex items-center justify-center pt-3">
+            <li className="mx-6">
               <Link to="/">HOME</Link>
             </li>
-            <li className="mx-8">
+            <li className="mx-6">
               <Link to="/service1">업무분야</Link>
             </li>
-            <li className="mx-8">상담접수 및 비용안내</li>
+            <li className="mx-6">상담접수 및 비용안내</li>
           </ul>
         </div>
       </div>
