@@ -1,10 +1,11 @@
 import React, { useRef, useEffect } from "react";
+import { BsPencilSquare } from "react-icons/bs";
+import { ImCheckmark } from "react-icons/im";
 import Carousel from "react-bootstrap/Carousel";
-import { FcAbout, FcStatistics, FcServices } from "react-icons/fc";
 
 const options = {
   //지도를 생성할 때 필요한 기본 옵션
-  center: new window.kakao.maps.LatLng(35.75360626185865, 129.3246331340595), //지도의 중심좌표.
+  center: new window.kakao.maps.LatLng(37.5629162496894, 126.8234457878442), //지도의 중심좌표.
   level: 3, //지도의 레벨(확대, 축소 정도)
 };
 
@@ -14,8 +15,8 @@ function MainPage() {
     let map = new window.kakao.maps.Map(container.current, options); //지도 생성 및 객체 리턴
 
     let markerPosition = new window.kakao.maps.LatLng(
-      35.75360626185865,
-      129.3246331340595
+      37.5629162496894,
+      126.8234457878442
     );
     let marker = new window.kakao.maps.Marker({
       position: markerPosition,
@@ -26,180 +27,286 @@ function MainPage() {
 
   return (
     <>
-      <div style={{ zIndex: 1, transform: "translate(0, -100px)" }}>
-        <Carousel varient="dark" fade interval={4000}>
+      <div
+        className="absolute top-0 "
+        style={{
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1128&q=80')",
+        }}
+      ></div>
+      <div className="max-w-7xl py-4 mx-auto flex justify-between my-20">
+        <div className="flex flex-col w-1/2">
+          <h4 className="text-sm text-green-600">DAEGYOTAX</h4>
+          <h2 className="text-3xl font-medium text-green-600">
+            당신의 세금, 안녕하십니까?
+          </h2>
+          <h5 className="font-light text-green-600 mt-2 mb-8">___</h5>
+          <h3 className="text-lg mb-1">고객의 소중한 재산을 지켜드릴</h3>
+          <h3 className="text-lg mb-1 font-medium">최고의 세무전문가</h3>
+          <h3 className="text-lg mb-1 font-medium">DAEGYOTAX</h3>
+          <h5 className="font-light text-green-600 text-2xl mt-10 mb-8">
+            <ImCheckmark />
+          </h5>
+          <h3 className="text-lg mb-1">
+            상속, 증여, 양도 및 각종 세무조사에 특
+          </h3>
+          <h3 className="text-lg mb-1">화되어 있는 전문가들로 구성되어 있으</h3>
+          <h3 className="text-lg mb-1">며 업계 최고 수준의 세무서비스를 제</h3>
+          <h3 className="text-lg mb-1">공하고 있습니다.</h3>
+          <h5 className="font-light text-green-600 text-2xl mt-10 mb-8">
+            <ImCheckmark />
+          </h5>
+          <h3 className="text-lg mb-1">대교는 귀하의 소중한 재산을 지켜</h3>
+          <h3 className="text-lg mb-1">드립니다.</h3>
+          <div className="flex items-center border-2 py-3 px-3 mt-10 w-48 text-center">
+            <BsPencilSquare /> <span className="ml-2">세무상담 신청하기</span>
+          </div>
+        </div>
+        <div className=" w-1/2">
+          <div className="grid grid-cols-2 grid-rows-5 w-full h-full gap-10">
+            <div
+              className="row-span-3 w-80 rounded-2xl"
+              style={{
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundImage:
+                  "url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')",
+              }}
+            ></div>
+            <div></div>
+            <div
+              className="row-span-3 w-80 rounded-2xl"
+              style={{
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundImage:
+                  "url('https://images.unsplash.com/photo-1564069114553-7215e1ff1890?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80')",
+              }}
+            >
+              {" "}
+            </div>
+            <div
+              className="row-span-2 w-80 rounded-2xl"
+              style={{
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundImage:
+                  "url('https://images.unsplash.com/photo-1483389127117-b6a2102724ae?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80')",
+              }}
+            >
+              {" "}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="max-w-7xl py-4 mx-auto flex justify-between my-20">
+        <div className=" w-1/2">
+          <div className="grid grid-cols-2 grid-rows-5 w-full h-full gap-10 w-1/2">
+            <div></div>
+            <div
+              className="row-span-3 w-80 rounded-2xl"
+              style={{
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundImage:
+                  "url('https://images.unsplash.com/photo-1601597110547-78516f198ce4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80')",
+              }}
+            >
+              {" "}
+            </div>
+            <div></div>
+            <div
+              className="row-span-3 w-80 rounded-2xl"
+              style={{
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundImage:
+                  "url('https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80')",
+              }}
+            >
+              {" "}
+            </div>
+            <div
+              className="w-80 rounded-2xl"
+              style={{
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundImage:
+                  "url('https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1053&q=80')",
+              }}
+            >
+              {" "}
+            </div>
+            <div></div>
+          </div>
+        </div>
+        <div className="flex flex-col pr-60">
+          <h4 className="text-sm text-green-600">Premium Service</h4>
+          <h2 className="text-3xl font-medium text-green-600">
+            스마트한 세무서비스
+          </h2>
+          <h5 className="font-light text-green-600 mt-2 mb-8">___</h5>
+          <h3 className="text-lg mb-1">상황 별 요소를 파악하여</h3>
+          <h3 className="text-lg mb-1 font-medium">리스크를 최소화한</h3>
+          <h3 className="text-lg mb-1 font-medium">
+            최적의 절세 플랜을 제시합니다.
+          </h3>
+          <h5 className="font-light text-green-600 text-2xl mt-10 mb-8">
+            <ImCheckmark />
+          </h5>
+          <h3 className="text-lg mb-1">차별화된 전문성과 신뢰를 바탕으로 고</h3>
+          <h3 className="text-lg mb-1">
+            객의 만족을 위해 최선을 다하겠습니다.
+          </h3>
+          <h5 className="font-light text-green-600 text-2xl mt-10 mb-8">
+            <ImCheckmark />
+          </h5>
+          <h3 className="text-lg mb-1">저희와의 만남이 여러분의 특별한 선택</h3>
+          <h3 className="text-lg mb-1">이 될 것을 약속합니다.</h3>
+          <h4 className="text-sm text-green-600 mt-20">Business Partner</h4>
+          <h2 className="text-3xl font-medium text-green-600">
+            믿을 수 있는 세무파트너
+          </h2>
+          <h5 className="font-light text-green-600 mt-2 mb-8">___</h5>
+          <h3 className="text-lg mb-1">고객과의 신뢰를 최우선으로</h3>
+          <h3 className="text-lg mb-1">여기며 비밀엄수 규정을 준수하여</h3>
+          <h3 className="text-lg mb-1">소중한 고객의 정보를 보호합니다.</h3>
+          <h5 className="font-light text-green-600 text-2xl mt-10 mb-8">
+            <ImCheckmark />
+          </h5>
+          <h3 className="text-lg mb-1">차별화된 전문성과 신뢰를 바탕으로 고</h3>
+          <h3 className="text-lg mb-1">
+            객의 만족을 위해 최선을 다하겠습니다.
+          </h3>
+          <div className="flex items-center border-2 py-3 px-3 mt-10 w-48 text-center">
+            <BsPencilSquare /> <span className="ml-2">세무상담 신청하기</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <Carousel fade>
           <Carousel.Item>
             <img
-              className="w-100"
-              src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+              className="d-block h-80  w-100"
+              src="https://images.unsplash.com/reserve/m6rT4MYFQ7CT8j9m2AEC_JakeGivens%20-%20Sunset%20in%20the%20Park.JPG?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1053&q=80"
               alt="First slide"
             />
             <Carousel.Caption>
-              <h5>First slide label</h5>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <h3 className="text-6xl transform -translate-y-10 text-green-900">
+                프리미엄 세무 서비스
+              </h3>
+              <p className="transform -translate-y-10 text-green-800">
+                Nulla vitae elit libero, a pharetra augue mollis interdum.
+              </p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
-              className="w-100"
-              src="https://images.unsplash.com/photo-1630343710506-89f8b9f21d31?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+              className="d-block  h-80 w-100"
+              src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
               alt="Second slide"
             />
+
             <Carousel.Caption>
-              <h5>Second slide label</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h3 className="text-6xl transform -translate-y-10 text-green-900">
+                재산관련 세무 전문가
+              </h3>
+              <p className="transform -translate-y-10 text-green-800">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
-              className="w-100"
-              src="https://images.unsplash.com/photo-1630329800719-58e1f63c73ab?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=805"
+              className="d-block h-80  w-100"
+              src="https://images.unsplash.com/photo-1470921346718-b615f097684b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
               alt="Third slide"
             />
+
             <Carousel.Caption>
-              <h5>Third slide label</h5>
-              <p>
+              <h3 className="text-6xl transform -translate-y-10 text-green-900">
+                상속 / 증여 / 양도 전문가
+              </h3>
+              <p className="transform -translate-y-10 text-green-800">
                 Praesent commodo cursus magna, vel scelerisque nisl consectetur.
               </p>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
       </div>
-      <div className="max-w-5xl mx-auto flex flex-col text-center mb-20">
-        <h1>
-          <span className="text-red-400">상속세</span>를{" "}
-          <span className="text-red-400">빠르고 정확하게</span> 해결하는 방법
-        </h1>
-        <h3 className="font-light text-xl">상속세전문 종만세무</h3>
-        <div className="flex justify-between mt-12">
-          <div className="flex flex-col px-24 border-l-2 border-r-2">
-            <FcAbout className=" text-9xl" />
-            <h2 className="text-xl mt-4">세무 세무 종만법인</h2>
+
+      <div className="bg-gray-100">
+        <div className="max-w-7xl py-4 mx-auto flex flex-col mb-20 justify-center">
+          <div className="flex flex-col justify-center items-center py-10 ">
+            <h4 className="text-sm text-green-600">Service</h4>
+            <h1 className="text-3xl font-bold">다양한 세무서비스</h1>
           </div>
-          <div className="flex flex-col">
-            <FcStatistics className=" text-9xl" />
-            <h2 className="text-xl mt-4">세무 세무 종만법인</h2>
-          </div>
-          <div className="flex flex-col  px-24 border-l-2 border-r-2">
-            <FcServices className=" text-9xl" />
-            <h2 className="text-xl mt-4">세무 세무 종만법인</h2>
+          <div className="grid grid-cols-4 gap-4 pb-10">
+            <div className="flex flex-col justify-center items-center">
+              <img
+                src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
+                alt="service1"
+              />
+              <div className="flex flex-col bg-white py-4 justify-center items-center w-full h-full">
+                <h4 className="text-sm text-green-600 mb-3">01</h4>
+                <h2 className="text-2xl font-medium">상속</h2>
+                <h3 className=" mb-10 text-sm">최고의 상속세 전무 세무사</h3>
+                <h6 className="text-sm font-light">MORE +</h6>
+              </div>
+            </div>
+            <div className="flex flex-col justify-center items-center">
+              <img
+                src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
+                alt="service1"
+              />
+              <div className="flex flex-col bg-white py-4 justify-center items-center w-full h-full">
+                <h4 className="text-sm text-green-600 mb-3">01</h4>
+                <h2 className="text-2xl font-medium">상속</h2>
+                <h3 className=" mb-10 text-sm">최고의 상속세 전무 세무사</h3>
+                <h6 className="text-sm font-light">MORE +</h6>
+              </div>
+            </div>
+            <div className="flex flex-col justify-center items-center">
+              <img
+                src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
+                alt="service1"
+              />
+              <div className="flex flex-col bg-white py-4 justify-center items-center w-full h-full">
+                <h4 className="text-sm text-green-600 mb-3">01</h4>
+                <h2 className="text-2xl font-medium">상속</h2>
+                <h3 className=" mb-10 text-sm">최고의 상속세 전무 세무사</h3>
+                <h6 className="text-sm font-light">MORE +</h6>
+              </div>
+            </div>
+            <div className="flex flex-col justify-center items-center">
+              <img
+                src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
+                alt="service1"
+              />
+              <div className="flex flex-col bg-white py-4 justify-center items-center w-full h-full">
+                <h4 className="text-sm text-green-600 mb-3">01</h4>
+                <h2 className="text-2xl font-medium">상속</h2>
+                <h3 className=" mb-10 text-sm">최고의 상속세 전무 세무사</h3>
+                <h6 className="text-sm font-light">MORE +</h6>
+              </div>
+            </div>
           </div>
         </div>
-        <h2 className="mt-20 text-2xl text-blue-400">
-          최고의 상속세 신고를 알아보세요 &rarr;
-        </h2>
       </div>
 
-      <div
-        className="py-20"
-        style={{
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80')",
-        }}
-      >
-        <div className="max-w-5xl mx-auto flex flex-col text-center mb-10">
-          <div className="grid grid-cols-2 gap-12">
-            <div className="w-full">
-              <div>
-                <div className="flex justify-between">
-                  <h4>세무회계뉴스</h4>
-                  <span className="text-3xl mb-2">+</span>
-                </div>
-                <span className="flex justify-between">
-                  <h5 className="text-lg font-light">
-                    자영업자가 꼭 실천해야 할 절세 전략
-                  </h5>
-                  <h6 className="text-lg font-light">2021-08-01</h6>
-                </span>
-                <span className="flex justify-between">
-                  <h5 className="text-lg font-light">
-                    자영업자가 꼭 실천해야 할 절세 전략
-                  </h5>
-                  <h6 className="text-lg font-light">2021-08-01</h6>
-                </span>
-                <span className="flex justify-between">
-                  <h5 className="text-lg font-light">
-                    자영업자가 꼭 실천해야 할 절세 전략
-                  </h5>
-                  <h6 className="text-lg font-light">2021-08-01</h6>
-                </span>
-              </div>
-            </div>
-            <div className="w-full">
-              <div>
-                <div className="flex justify-between">
-                  <h4>세무회계뉴스</h4>
-                  <span className="text-3xl mb-2">+</span>
-                </div>
-                <span className="flex justify-between">
-                  <h5 className="text-lg font-light">
-                    자영업자가 꼭 실천해야 할 절세 전략
-                  </h5>
-                  <h6 className="text-lg font-light">2021-08-01</h6>
-                </span>
-                <span className="flex justify-between">
-                  <h5 className="text-lg font-light">
-                    자영업자가 꼭 실천해야 할 절세 전략
-                  </h5>
-                  <h6 className="text-lg font-light">2021-08-01</h6>
-                </span>
-                <span className="flex justify-between">
-                  <h5 className="text-lg font-light">
-                    자영업자가 꼭 실천해야 할 절세 전략
-                  </h5>
-                  <h6 className="text-lg font-light">2021-08-01</h6>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="bg-white py-10 mt-10">
-            <span className="flex ml-4 font-medium text-xl mb-4 mx-4">
-              상담신청하기
-            </span>
-            <form className="flex flex-col">
-              <input
-                className="border p-2 mx-4 mb-2"
-                type="text"
-                placeholder="이름"
-              />
-              <input
-                className="border p-2 mx-4 mb-2"
-                type="text"
-                placeholder="전화번호"
-              />
-              <input
-                className="border p-2 mx-4 mb-2"
-                type="text"
-                placeholder="이메일"
-              />
-              <textarea
-                className="border p-2 mx-4 mb-2"
-                rows="6"
-                placeholder="문의하기"
-              ></textarea>
-              <div className="flex justify-end">
-                <input
-                  type="submit"
-                  className="py-2 w-28 mx-4 bg-blue-400 text-white rounded"
-                  value="전송하기"
-                />
-              </div>
-            </form>
-          </div>
+      <div className="max-w-7xl py-4 mx-auto flex flex-col mb-20 justify-center">
+        <div className="flex flex-col justify-center items-center py-10 ">
+          <h4 className="text-sm text-green-600">Contact Us</h4>
+          <h1 className="text-3xl font-bold">오시는 길</h1>
         </div>
-      </div>
-      <div>
-        <img src="images/profile.jpg" alt="profile" />
-      </div>
-      <div className="max-w-5xl mx-auto my-20 flex flex-col">
+
         <div>
-          <h2 className="font-medium border-b-2 pb-2">오시는길</h2>
-          <h3 className="text-2xl mt-2">
-            서울시 서초구 서초중앙로2길 42, 202호(서초동, 갑목빌딩)
+          <h3 className="text-xl mt-2">
+            서울특별시 강서구 마곡서로 101, 817호(마곡동 768-2,
+            동익드미라벨복합빌딩, 강서세무서 맞은편)
           </h3>
-          <h4 className="text-xl font-light mb-4">남부터미널역 3번 출구</h4>
         </div>
         <div
           className="map"

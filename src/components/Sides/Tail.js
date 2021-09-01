@@ -1,54 +1,34 @@
 import React from "react";
-import { GrInstagram } from "react-icons/gr";
-import { FaFacebookSquare } from "react-icons/fa";
-import { SiBloglovin } from "react-icons/si";
 
 function Tail() {
   return (
-    <div className="">
-      <div className=" py-4  border-t-2">
-        <div className="max-w-5xl mx-auto py-2">
-          <div className="flex">
-            <img
-              className="mr-6"
-              src="images/logo1.png"
-              width="110px"
-              height="50px"
-              alt="logo1"
-            />
-            <img
-              className="mr-3"
-              src="images/logo2.png"
-              width="140px"
-              height="50px"
-              alt="logo2"
-            />
-            <img
-              className="mr-3"
-              src="images/logo3.png"
-              width="140px"
-              height="50px"
-              alt="logo3"
-            />
+    <div className="bg-gray-600 py-12">
+      <div className="max-w-7xl py-4 mx-auto font-medium flex items-center justify-between bg-fixed">
+        <div className="flex flex-col">
+          <div className="grid grid-cols-5 gap-10 border-b border-gray-500 pb-4">
+            <div className="col-span-1 ">
+              <img src="images/logo_white.png" alt="logo" width="200px" />
+            </div>
+            <div className="col-span-4 ml-10 flex flex-col justify-center">
+              <h6 className="text-sm font-light text-white mb-1">
+                <span className="font-medium">사업자등록번호</span> 111-11-11111
+                | <span className="font-medium">주소</span> 서울특별시 강서구
+                마곡서로 101, 817호(마곡동 768-2, 동익드미라벨복합빌딩,
+                강서세무서 맞은편)
+              </h6>
+              <h6 className="text-sm font-light text-white ">
+                <span className="font-medium">대표전화</span> 02-6949-0252 |{" "}
+                <span className="font-medium">팩스</span> 02-6949-0253 |{" "}
+                <span className="font-medium">영업시간</span> 오전 10:00 ~ 오후
+                06:00
+              </h6>
+            </div>
           </div>
-          <div></div>
-        </div>
-      </div>
-      <div className="border-t-2 bg-gray-100">
-        <div className="max-w-5xl mx-auto flex justify-between items-center py-6">
-          <div>
-            <h6 className="texl-xl font-light text-gray-600">
-              대구아이캔 | 대구광역시 중구 국채보상로 123길 16, 3층 대표번호 :
-              053-242-5454 사업자등록번호 513-61-00074
-            </h6>
-            <h6 className="texl-xl font-light text-gray-600 uppercase">
-              copyright all rights reserved {new Date().getFullYear()} by ican
-            </h6>
-          </div>
-          <div className="flex">
-            <GrInstagram className="text-2xl mx-1" />
-            <FaFacebookSquare className="text-2xl mx-1" />
-            <SiBloglovin className="text-2xl mx-1" />
+          <div className="flex justify-center items-center mt-10">
+            <span className="font-light text-white uppercase">
+              Copyright {new Date().getFullYear()} Daegyo Accounting & Tax
+              services All right reserved
+            </span>
           </div>
         </div>
       </div>
