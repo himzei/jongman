@@ -37,7 +37,7 @@ function MainPage() {
           <h4 className="text-white text-2xl mb-4 shadow-xl">
             당신의 세금 안녕하십니까?
           </h4>
-          <h1 className="text-blue-800 text-7xl mb-4 ">DAEGYOTAX</h1>
+          <h1 className="text-blue-800 text-7xl font-bold mb-4 ">DAEGYOTAX</h1>
           <h5 className="text-white text-2xl font-light">
             당신의 소중한 재산을 지켜드립니다.
           </h5>
