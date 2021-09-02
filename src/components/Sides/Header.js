@@ -19,7 +19,9 @@ function Header() {
             <li className="mx-6">
               <Link to="/service1">업무분야</Link>
             </li>
-            <li className="mx-6">상담접수 및 비용안내</li>
+            <li className="mx-6">
+              <Link to="/consult">상담접수 및 비용안내</Link>
+            </li>
           </ul>
         </div>
       </div>

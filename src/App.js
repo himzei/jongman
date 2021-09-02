@@ -9,6 +9,7 @@ import { clearUser, setUser } from "./redux/actions/user_action";
 import Header from "./components/Sides/Header";
 import Tail from "./components/Sides/Tail";
 import ServicePage1 from "./components/ServicesPage/ServicePage1";
+import ConsultPage from "./components/ConsultPage/ConsultPage";
 
 function App() {
   let history = useHistory();
@@ -39,6 +40,7 @@ function App() {
           <Route exact path="/login" component={LoginPage} />
           <Route exact path="/register" component={RegisterPage} />
           <Route exact path="/service1" component={ServicePage1} />
+          <Route exact path="/consult" component={ConsultPage} />
         </Switch>
         <Tail />
       </>
