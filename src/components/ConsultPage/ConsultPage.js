@@ -42,14 +42,59 @@ function ConsultPage() {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto flex justify-center items-center my-20">
-        <div className="w-1/2 h-full">
-          <img
-            src="https://images.unsplash.com/photo-1630512996510-c6a301d874cc?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0M3x8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-            alt="3"
-            width="100%"
-            height="100vh"
-          />
+      <div className="max-w-7xl mx-auto flex justify-between my-20">
+        <div className="w-1/2">
+          <div className="grid grid-cols-2 grid-rows-5 w-full h-full gap-3 w-1/2">
+            <div
+              className="row-span-3 rounded-2xl"
+              style={{
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundImage:
+                  "url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')",
+              }}
+            ></div>
+            <div
+              className="rounded-2xl"
+              style={{
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundImage:
+                  "url('https://images.unsplash.com/photo-1630511431106-105062e4fb8a?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0Nnx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')",
+              }}
+            ></div>
+            <div
+              className="row-span-3 rounded-2xl"
+              style={{
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundImage:
+                  "url('https://images.unsplash.com/photo-1562240020-ce31ccb0fa7d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YWNjb3VudHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')",
+              }}
+            >
+              {" "}
+            </div>
+            <div
+              className="row-span-2 rounded-2xl"
+              style={{
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundImage:
+                  "url('https://images.unsplash.com/photo-1518976024611-28bf4b48222e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fGFjY291bnR8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')",
+              }}
+            >
+              {" "}
+            </div>
+            <div
+              className=" rounded-2xl"
+              style={{
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundImage:
+                  "url('https://images.unsplash.com/photo-1561837581-abd854e0ee22?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fGFjY291bnR8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')",
+              }}
+            ></div>
+          </div>
         </div>
         <div className="w-1/2 pl-10">
           <form className="flex flex-col">
@@ -161,6 +206,43 @@ function ConsultPage() {
               />
             </div>
           </form>
+        </div>
+      </div>
+      <div className="bg-gray-100 py-20 w-full h-full">
+        <div className="max-w-7xl mx-auto flex flex-col justify-center items-center  w-full h-full">
+          <h2 className="text-3xl font-bold mb-10">비용 안내</h2>
+          <div className="grid grid-cols-2  w-full h-full">
+            <div
+              style={{
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundImage:
+                  "url('https://images.unsplash.com/photo-1630518684826-73a141396d95?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1059&q=80')",
+              }}
+              className="w-full h-48 rounded-l-full bg-blue-500 flex justify-end items-center"
+            >
+              <div className="flex flex-col text-center pr-10">
+                <h4 className="text-white text-lg">일반 상담료</h4>
+                <h2 className="text-white text-4xl">200,000</h2>
+                <h6 className="text-sm text-white font-light">- VAT별도 -</h6>
+              </div>
+            </div>
+            <div
+              style={{
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundImage:
+                  "url('https://images.unsplash.com/photo-1616514197671-15d99ce7a6f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1053&q=80')",
+              }}
+              className="w-full h-48 rounded-r-full bg-blue-500 flex items-center"
+            >
+              <div className="flex flex-col text-center pl-10">
+                <h4 className="text-white text-lg">다주택자 상담료</h4>
+                <h2 className="text-white text-4xl">500,000</h2>
+                <h6 className="text-sm text-white font-light">- VAT별도 -</h6>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

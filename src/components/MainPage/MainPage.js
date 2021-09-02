@@ -71,7 +71,7 @@ function MainPage() {
             <BsPencilSquare /> <span className="ml-2">세무상담 신청하기</span>
           </div>
         </div>
-        <div className=" w-1/2">
+        <div className="w-1/2">
           <div className="grid grid-cols-2 grid-rows-5 w-full h-full gap-10">
             <div
               className="row-span-3 w-80 rounded-2xl"
