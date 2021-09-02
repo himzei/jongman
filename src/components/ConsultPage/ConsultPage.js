@@ -43,8 +43,15 @@ function ConsultPage() {
         </div>
       </div>
       <div className="max-w-7xl mx-auto flex justify-center items-center my-20">
-        <div className="w-1/2"></div>
-        <div className="w-1/2">
+        <div className="w-1/2 h-full">
+          <img
+            src="https://images.unsplash.com/photo-1630512996510-c6a301d874cc?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0M3x8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+            alt="3"
+            width="100%"
+            height="100vh"
+          />
+        </div>
+        <div className="w-1/2 pl-10">
           <form className="flex flex-col">
             <label className="mb-2 ">
               이름 <span className="text-red-500">*</span>
