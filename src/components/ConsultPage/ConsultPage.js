@@ -1,8 +1,30 @@
 import React from "react";
 import { FcAddressBook, FcCurrencyExchange } from "react-icons/fc";
 import Policy from "./Policy";
+import emailjs from "emailjs-com";
 
 function ConsultPage() {
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_x1dvzxv",
+        "template_yy7vqxl",
+        e.target,
+        "user_TvrxgIwV6EvpJQJjDDI85"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  }
+
   return (
     <>
       <div className="flex w-full h-1/3">
@@ -97,7 +119,7 @@ function ConsultPage() {
           </div>
         </div>
         <div className="w-1/2 pl-10">
-          <form className="flex flex-col">
+          <form className="flex flex-col" onSubmit={sendEmail}>
             <label className="mb-2 ">
               이름 <span className="text-red-500">*</span>
             </label>
@@ -162,32 +184,47 @@ function ConsultPage() {
             </label>
             <div className="mb-2">
               <input type="checkbox" name="" />
-              <span className="ml-2">양도</span>
+              <span name="type1" value="양도" className="ml-2">
+                양도
+              </span>
             </div>
             <div className="mb-2">
               <input type="checkbox" name="" />
-              <span className="ml-2">증여</span>
+              <span name="type2" value="증여" className="ml-2">
+                증여
+              </span>
             </div>
             <div className="mb-2">
               <input type="checkbox" name="" />
-              <span className="ml-2">상속</span>
+              <span name="type3" value="상속" className="ml-2">
+                상속
+              </span>
             </div>
             <div className="mb-2">
               <input type="checkbox" name="" />
-              <span className="ml-2">기장</span>
+              <span name="type" value="기장" className="ml-2">
+                기장
+              </span>
             </div>
             <div className="mb-2">
               <input type="checkbox" name="" />
-              <span className="ml-2">조사</span>
+              <span name="type" value="조사" className="ml-2">
+                조사
+              </span>
             </div>
             <div className="mb-4">
               <input type="checkbox" name="" />
               <span className="ml-2">그외</span>
             </div>
+
             <label className="mb-2 ">
               내용 <span className="text-red-500">*</span>
             </label>
-            <textarea className="border mb-4" rows="4"></textarea>
+            <textarea
+              name="content"
+              className="border mb-4 p-2"
+              rows="4"
+            ></textarea>
 
             <label className="mb-2 ">
               개인정보 수집 및 이용 동의 <span className="text-red-500">*</span>
@@ -199,6 +236,7 @@ function ConsultPage() {
               <input type="checkbox" name="policy" />
               <span className="ml-2">개인정보 수집 및 이용에 동의합니다.</span>
             </div>
+
             <div className="flex justify-end">
               <input
                 type="submit"

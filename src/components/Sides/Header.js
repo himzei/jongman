@@ -31,7 +31,7 @@ function Header() {
             <img src="images/logo.png" alt="logo" width="200px" />
           </div>
           <div>
-            <ul className="flex items-center justify-center pt-3">
+            <ul className="flex items-center justify-center pt-2">
               <li className="mx-6">
                 <Link to="/">HOME</Link>
               </li>
