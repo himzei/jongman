@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FcAddressBook, FcCurrencyExchange } from "react-icons/fc";
 import Policy from "./Policy";
 import emailjs from "emailjs-com";
 
 function ConsultPage() {
-  const { register, watch, errors } = useForm({ mode: "onChange" });
-
-  console.log(watch("name"));
+  const { register, errors, handleSubmit } = useForm({ mode: "onChange" });
+  const [loading, setLoading] = useState(false);
 
   function sendEmail(e) {
+    setLoading(true);
     e.preventDefault();
 
     emailjs
@@ -27,7 +27,9 @@ function ConsultPage() {
           console.log(error.text);
         }
       );
+
     e.target.reset();
+    setLoading(false);
   }
 
   return (
@@ -124,7 +126,7 @@ function ConsultPage() {
           </div>
         </div>
         <div className="w-1/2 pl-10">
-          <form className="flex flex-col" onSubmit={sendEmail}>
+          <form className="flex flex-col" onSubmit={handleSubmit(sendEmail)}>
             <label className="mb-2 ">
               이름 <span className="text-red-500">*</span>
             </label>
@@ -156,7 +158,6 @@ function ConsultPage() {
                 maxLength="3"
                 className="border py-2 px-4 mr-2 bg-gray-100 text-gray-400"
                 value="010"
-                disabled
               />
               -
               <input
@@ -178,22 +179,23 @@ function ConsultPage() {
               />
             </div>
 
-            {errors.tel2 &&
-              errors.tel2.type === "required" &&
-              errors.tel3 &&
-              errors.tel3.type === "required" && (
-                <p className="text-red-500 font-light -mt-4">
-                  연락처를 입력하셔야 합니다.
-                </p>
-              )}
             {(errors?.tel2?.type === "pattern") |
-              (errors?.tel3?.type === "pattern") && (
+            (errors?.tel3?.type === "pattern") ? (
               <p className="text-red-500 font-light -mt-4">
-                숫자를 입력하셔야 합니다.(0~9)
+                숫자를 입력해 주세요 ^^;
               </p>
-            )}
+            ) : null}
 
-            <label className="mb-2 ">이메일</label>
+            {(errors?.tel2?.type === "required") |
+            (errors?.tel3?.type === "required") ? (
+              <p className="text-red-500 font-light -mt-4">
+                연락처를 입력해 주세요
+              </p>
+            ) : null}
+
+            <label className="mb-2 ">
+              이메일 <span className="text-red-500">*</span>
+            </label>
             <input
               type="email"
               name="email"
@@ -211,9 +213,7 @@ function ConsultPage() {
               </p>
             )}
 
-            <label className="mb-2 ">
-              상담희망시간 <span className="text-red-500">*</span>
-            </label>
+            <label className="mb-2 ">상담희망시간</label>
             <div className="mb-2 mb-4 flex">
               <input type="date" name="month" className="border p-2" />
               <select
@@ -240,41 +240,29 @@ function ConsultPage() {
                 <option value="17:00">17시 00분</option>
               </select>
             </div>
-            <label className="mb-2 ">
-              문의유형 <span className="text-red-500">*</span>
-            </label>
+            <label className="mb-2 ">문의유형</label>
             <div className="mb-2">
-              <input type="checkbox" name="" />
-              <span name="type1" value="양도" className="ml-2">
-                양도
-              </span>
+              <input value="양도" type="checkbox" name="type1" />
+              <span className="ml-2">양도</span>
             </div>
             <div className="mb-2">
-              <input type="checkbox" name="" />
-              <span name="type2" value="증여" className="ml-2">
-                증여
-              </span>
+              <input value="증여" type="checkbox" name="type2" />
+              <span className="ml-2">증여</span>
             </div>
             <div className="mb-2">
-              <input type="checkbox" name="" />
-              <span name="type3" value="상속" className="ml-2">
-                상속
-              </span>
+              <input value="상속" type="checkbox" name="type3" />
+              <span className="ml-2">상속</span>
             </div>
             <div className="mb-2">
-              <input type="checkbox" name="" />
-              <span name="type" value="기장" className="ml-2">
-                기장
-              </span>
+              <input value="기장" type="checkbox" name="type4" />
+              <span className="ml-2">기장</span>
             </div>
             <div className="mb-2">
-              <input type="checkbox" name="" />
-              <span name="type" value="조사" className="ml-2">
-                조사
-              </span>
+              <input value="조사" type="checkbox" name="type5" />
+              <span className="ml-2">조사</span>
             </div>
             <div className="mb-4">
-              <input type="checkbox" name="" />
+              <input type="checkbox" name="type6" value="그외" />
               <span className="ml-2">그외</span>
             </div>
 
@@ -285,7 +273,19 @@ function ConsultPage() {
               name="content"
               className="border mb-4 p-2"
               rows="4"
+              ref={register({ required: true, minLength: 10 })}
             ></textarea>
+            {errors?.content?.type === "required" ? (
+              <p className="text-red-500 font-light -mt-4">
+                내용을 입력해 주세요 ^^;
+              </p>
+            ) : null}
+
+            {errors?.content?.type === "minLength" ? (
+              <p className="text-red-500 font-light -mt-4">
+                내용은 최소 10자 이상 적어주세요 ^^;
+              </p>
+            ) : null}
 
             <label className="mb-2 ">
               개인정보 수집 및 이용 동의 <span className="text-red-500">*</span>
@@ -294,12 +294,22 @@ function ConsultPage() {
               {Policy}
             </textarea>
             <div className="mb-4">
-              <input type="checkbox" name="policy" />
+              <input
+                type="checkbox"
+                name="policy"
+                ref={register({ required: true })}
+              />
               <span className="ml-2">개인정보 수집 및 이용에 동의합니다.</span>
             </div>
+            {errors?.policy?.type === "required" ? (
+              <p className="text-red-500 font-light -mt-4">
+                "개인정보 수집 및 이용 동의"에 체크해 주세요 ^^;
+              </p>
+            ) : null}
 
             <div className="flex justify-end">
               <input
+                disabled={loading}
                 type="submit"
                 className="py-2 w-24 bg-blue-500 text-white"
               />
