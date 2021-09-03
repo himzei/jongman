@@ -1,9 +1,14 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import { FcAddressBook, FcCurrencyExchange } from "react-icons/fc";
 import Policy from "./Policy";
 import emailjs from "emailjs-com";
 
 function ConsultPage() {
+  const { register, watch, errors } = useForm({ mode: "onChange" });
+
+  console.log(watch("name"));
+
   function sendEmail(e) {
     e.preventDefault();
 
@@ -123,7 +128,22 @@ function ConsultPage() {
             <label className="mb-2 ">
               이름 <span className="text-red-500">*</span>
             </label>
-            <input type="text" name="name" className="border p-2 mb-4" />
+            <input
+              ref={register({ required: true, minLength: 2 })}
+              type="text"
+              name="name"
+              className="border p-2 mb-4"
+            />
+            {errors.name && errors.name.type === "required" && (
+              <p className="text-red-500 font-light -mt-4">
+                이름을 입력해 주세요 ^^;
+              </p>
+            )}
+            {errors.name && errors.name.type === "minLength" && (
+              <p className="text-red-500 font-light -mt-4">
+                이름은 최소 2자 이상이어야 합니다.
+              </p>
+            )}
 
             <label className="mb-2 ">
               연락처 <span className="text-red-500">*</span>
@@ -134,7 +154,9 @@ function ConsultPage() {
                 size="3"
                 name="tel1"
                 maxLength="3"
-                className="border py-2 px-4 mr-2"
+                className="border py-2 px-4 mr-2 bg-gray-100 text-gray-400"
+                value="010"
+                disabled
               />
               -
               <input
@@ -143,6 +165,7 @@ function ConsultPage() {
                 name="tel2"
                 maxLength="4"
                 className="border py-2 px-4 mx-2"
+                ref={register({ required: true, pattern: /^[0-9]*$/ })}
               />
               -
               <input
@@ -151,11 +174,42 @@ function ConsultPage() {
                 name="tel3"
                 maxLength="4"
                 className="border py-2 px-4 mx-2"
+                ref={register({ required: true, pattern: /^[0-9]*$/ })}
               />
             </div>
 
+            {errors.tel2 &&
+              errors.tel2.type === "required" &&
+              errors.tel3 &&
+              errors.tel3.type === "required" && (
+                <p className="text-red-500 font-light -mt-4">
+                  연락처를 입력하셔야 합니다.
+                </p>
+              )}
+            {(errors?.tel2?.type === "pattern") |
+              (errors?.tel3?.type === "pattern") && (
+              <p className="text-red-500 font-light -mt-4">
+                숫자를 입력하셔야 합니다.(0~9)
+              </p>
+            )}
+
             <label className="mb-2 ">이메일</label>
-            <input type="email" name="email" className="border p-2 mb-4" />
+            <input
+              type="email"
+              name="email"
+              className="border p-2 mb-4"
+              ref={register({ required: true, pattern: /^\S+@\S+$/i })}
+            />
+            {errors.email && errors.email.type === "required" && (
+              <p className="text-red-500 font-light -mt-4">
+                이메일을 입력해 주세요 ^^;
+              </p>
+            )}
+            {errors.email && errors.email.type === "pattern" && (
+              <p className="text-red-500 font-light -mt-4">
+                이메일 형식에 맞게 작성해주세요(@)
+              </p>
+            )}
 
             <label className="mb-2 ">
               상담희망시간 <span className="text-red-500">*</span>
@@ -176,7 +230,14 @@ function ConsultPage() {
                 <option value="12:00">12시 00분</option>
                 <option value="12:30">12시 30분</option>
                 <option value="13:00">13시 00분</option>
-                <option value="13:30">09시 30분</option>
+                <option value="13:30">13시 30분</option>
+                <option value="14:00">14시 00분</option>
+                <option value="14:30">14시 30분</option>
+                <option value="15:00">15시 00분</option>
+                <option value="15:30">15시 30분</option>
+                <option value="16:00">16시 00분</option>
+                <option value="16:30">16시 30분</option>
+                <option value="17:00">17시 00분</option>
               </select>
             </div>
             <label className="mb-2 ">
