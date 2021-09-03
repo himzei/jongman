@@ -6,12 +6,10 @@ import emailjs from "emailjs-com";
 
 function ConsultPage() {
   const { register, errors, handleSubmit } = useForm({ mode: "onChange" });
-  const [loading, setLoading] = useState(false);
 
-  function sendEmail(e) {
-    setLoading(true);
-    e.preventDefault();
+  const [successrFromSubmit, setSuccessFromSubmit] = useState("");
 
+  const onSubmit = (data, e) => {
     emailjs
       .sendForm(
         "service_x1dvzxv",
@@ -19,18 +17,18 @@ function ConsultPage() {
         e.target,
         "user_TvrxgIwV6EvpJQJjDDI85"
       )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
+      .then((res) => {
+        e.target.reset();
+        setSuccessFromSubmit(true);
+        console.log("Email successfully sent!");
+      })
+      .catch((err) =>
+        console.error(
+          "There has been an error.  Here some thoughts on the error that occured:",
+          err
+        )
       );
-
-    e.target.reset();
-    setLoading(false);
-  }
+  };
 
   return (
     <>
@@ -126,7 +124,7 @@ function ConsultPage() {
           </div>
         </div>
         <div className="w-1/2 pl-10">
-          <form className="flex flex-col" onSubmit={handleSubmit(sendEmail)}>
+          <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
             <label className="mb-2 ">
               이름 <span className="text-red-500">*</span>
             </label>
@@ -309,11 +307,15 @@ function ConsultPage() {
 
             <div className="flex justify-end">
               <input
-                disabled={loading}
                 type="submit"
                 className="py-2 w-24 bg-blue-500 text-white"
               />
             </div>
+            {successrFromSubmit ? (
+              <p className="text-blue-500 font-light -mt-4">
+                메일이 성공적으로 전송되었습니다.{" "}
+              </p>
+            ) : null}
           </form>
         </div>
       </div>
