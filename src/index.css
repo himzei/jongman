@@ -5,6 +5,10 @@ a:active {
   text-decoration: none;
 }
 
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
 .auth-wrapper {
   display: flex;
   flex-direction: column;

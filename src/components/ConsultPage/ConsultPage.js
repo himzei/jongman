@@ -300,8 +300,8 @@ function ConsultPage() {
               <span className="ml-2">개인정보 수집 및 이용에 동의합니다.</span>
             </div>
             {errors?.policy?.type === "required" ? (
-              <p className="text-red-500 font-light -mt-4">
-                "개인정보 수집 및 이용 동의"에 체크해 주세요 ^^;
+              <p className="text-red-500 font-light -mt-6">
+                "개인정보 수집 및 이용 동의"에 체크해 주세요 ^^
               </p>
             ) : null}
 
@@ -312,8 +312,8 @@ function ConsultPage() {
               />
             </div>
             {successrFromSubmit ? (
-              <p className="text-blue-500 font-light -mt-4">
-                메일이 성공적으로 전송되었습니다.{" "}
+              <p className="text-blue-500 -mt-8">
+                메일이 성공적으로 전송되었고, 빠른 시일내에 연락드리겠습니다. ^^{" "}
               </p>
             ) : null}
           </form>

@@ -36,7 +36,43 @@ function Header() {
                 <Link to="/">HOME</Link>
               </li>
               <li className="mx-6">
-                <Link to="/service1">업무분야</Link>
+                <div className="dropdown relative inline-block">
+                  <Link to="/service1">업무분야</Link>
+                  <ul class="dropdown-menu absolute hidden text-gray-700 pt-2 transform -translate-x-2">
+                    <li class="">
+                      <Link
+                        className="hover:bg-gray-100 py-2 px-3 block whitespace-no-wrap"
+                        to="service1"
+                      >
+                        상속
+                      </Link>
+                    </li>
+                    <li class="">
+                      <Link
+                        class=" hover:bg-gray-100 py-2 px-3 block whitespace-no-wrap"
+                        to="#"
+                      >
+                        양도
+                      </Link>
+                    </li>
+                    <li class="">
+                      <Link
+                        class=" hover:bg-gray-100 py-2 px-3 block whitespace-no-wrap"
+                        to="#"
+                      >
+                        증여
+                      </Link>
+                    </li>
+                    <li class="">
+                      <Link
+                        class=" hover:bg-gray-100 py-2 px-3 block whitespace-no-wrap"
+                        to="#"
+                      >
+                        일반 세무상담
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </li>
               <li className="mx-6">
                 <Link to="/consult">상담접수 및 비용안내</Link>

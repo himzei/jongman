@@ -74,7 +74,7 @@ function MainPage() {
         <div className="w-1/2">
           <div className="grid grid-cols-2 grid-rows-5 w-full h-full gap-10">
             <div
-              className="row-span-3 w-80 rounded-2xl"
+              className="row-span-3  rounded-2xl"
               style={{
                 backgroundPosition: "center",
                 backgroundSize: "cover",
@@ -84,7 +84,7 @@ function MainPage() {
             ></div>
             <div></div>
             <div
-              className="row-span-3 w-80 rounded-2xl"
+              className="row-span-3  rounded-2xl"
               style={{
                 backgroundPosition: "center",
                 backgroundSize: "cover",
@@ -95,7 +95,7 @@ function MainPage() {
               {" "}
             </div>
             <div
-              className="row-span-2 w-80 rounded-2xl"
+              className="row-span-2 rounded-2xl"
               style={{
                 backgroundPosition: "center",
                 backgroundSize: "cover",
@@ -113,7 +113,7 @@ function MainPage() {
           <div className="grid grid-cols-2 grid-rows-5 w-full h-full gap-10 w-1/2">
             <div></div>
             <div
-              className="row-span-3 w-80 rounded-2xl"
+              className="row-span-3 rounded-2xl"
               style={{
                 backgroundPosition: "center",
                 backgroundSize: "cover",
@@ -125,7 +125,7 @@ function MainPage() {
             </div>
             <div></div>
             <div
-              className="row-span-3 w-80 rounded-2xl"
+              className="row-span-3  rounded-2xl"
               style={{
                 backgroundPosition: "center",
                 backgroundSize: "cover",
@@ -136,7 +136,7 @@ function MainPage() {
               {" "}
             </div>
             <div
-              className="w-80 rounded-2xl"
+              className="rounded-2xl"
               style={{
                 backgroundPosition: "center",
                 backgroundSize: "cover",
