@@ -69,9 +69,9 @@ function ConsultPage() {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto flex justify-between my-20">
-        <div className="w-1/2">
-          <div className="grid grid-cols-2 grid-rows-5 w-full h-full gap-3 w-1/2">
+      <div className="max-w-7xl mx-auto flex-none md:flex justify-between my-20">
+        <div className="w-full md:w-1/2">
+          <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-5 w-full h-full gap-3 w-1/2">
             <div
               className="row-span-3 rounded-2xl"
               style={{
@@ -123,7 +123,7 @@ function ConsultPage() {
             ></div>
           </div>
         </div>
-        <div className="w-1/2 pl-10">
+        <div className="w-full md:w-1/2 px-10">
           <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
             <label className="mb-2 ">
               이름 <span className="text-red-500">*</span>

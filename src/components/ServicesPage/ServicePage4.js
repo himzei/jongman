@@ -4,7 +4,7 @@ import { GiGreenhouse } from "react-icons/gi";
 import { BsBraces } from "react-icons/bs";
 import { FaHandshake } from "react-icons/fa";
 
-function ServicePage1() {
+function ServicePage4() {
   return (
     <>
       <div
@@ -76,7 +76,7 @@ function ServicePage1() {
             <h2 className="font-light text-xl text-blue-500">Daegyo Tax</h2>
             <h1 className="font-bold text-4xl text-white">상세보기 절차</h1>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 grid-rows-2 gap-8">
+          <div className="grid grid-cols-4 grid-rows-2 gap-8">
             <div className="flex flex-col p-4 bg-white opacity-60 rounded-xl">
               <span className="font-bold text-3xl text-blue-500 flex justify-start -mb-3">
                 <h2>1</h2>
@@ -220,4 +220,4 @@ function ServicePage1() {
   );
 }
 
-export default ServicePage1;
+export default ServicePage4;

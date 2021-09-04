@@ -5,7 +5,7 @@ function Tail() {
     <div className="bg-gray-600 py-12">
       <div className="max-w-7xl py-4 mx-auto font-medium flex items-center justify-between bg-fixed">
         <div className="flex flex-col">
-          <div className="grid grid-cols-5 gap-10 border-b border-gray-500 pb-4">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-10 border-b border-gray-500 pb-4">
             <div className="col-span-1 ">
               <img src="images/logo_white.png" alt="logo" width="200px" />
             </div>

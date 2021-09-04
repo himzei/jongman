@@ -43,8 +43,8 @@ function MainPage() {
           </h5>
         </div>
       </div>
-      <div className="max-w-7xl py-4 mx-auto flex justify-between my-20 ">
-        <div className="flex flex-col w-1/2">
+      <div className="max-w-7xl py-4 mx-auto flex-none md:flex my-20 ">
+        <div className="flex flex-col w-full  md:w-1/2 px-10 md:px-0">
           <h4 className="text-sm text-green-600">DAEGYOTAX</h4>
           <h2 className="text-3xl font-medium text-green-600">
             당신의 세금, 안녕하십니까?
@@ -67,14 +67,14 @@ function MainPage() {
           </h5>
           <h3 className="text-lg mb-1">대교는 귀하의 소중한 재산을 지켜</h3>
           <h3 className="text-lg mb-1">드립니다.</h3>
-          <div className="flex items-center border-2 py-3 px-3 mt-10 w-48 text-center">
+          <div className="flex items-center border-2 py-3 px-3 mt-10 w-48 text-center ">
             <BsPencilSquare /> <span className="ml-2">세무상담 신청하기</span>
           </div>
         </div>
-        <div className="w-1/2">
-          <div className="grid grid-cols-2 grid-rows-5 w-full h-full gap-10">
+        <div className="w-full md:w-1/2">
+          <div className="grid grid-cols-1 mt-10 md:-mt-10  md:grid-cols-2 grid-rows-5 w-full h-full gap-10">
             <div
-              className="row-span-3  rounded-2xl"
+              className="row-span-3 rounded-2xl h-48 md:h-full"
               style={{
                 backgroundPosition: "center",
                 backgroundSize: "cover",
@@ -84,7 +84,7 @@ function MainPage() {
             ></div>
             <div></div>
             <div
-              className="row-span-3  rounded-2xl"
+              className="row-span-3 rounded-2xl h-48 md:h-full"
               style={{
                 backgroundPosition: "center",
                 backgroundSize: "cover",
@@ -95,7 +95,7 @@ function MainPage() {
               {" "}
             </div>
             <div
-              className="row-span-2 rounded-2xl"
+              className="row-span-2 rounded-2xl h-48 md:h-full"
               style={{
                 backgroundPosition: "center",
                 backgroundSize: "cover",
@@ -108,12 +108,12 @@ function MainPage() {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl py-4 mx-auto flex justify-between my-20">
-        <div className=" w-1/2">
-          <div className="grid grid-cols-2 grid-rows-5 w-full h-full gap-10 w-1/2">
+      <div className="max-w-7xl py-4 mx-auto flex-none md:flex md:justify-between my-20">
+        <div className="w-full md:w-1/2">
+          <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-5 w-full h-full gap-10 w-1/2">
             <div></div>
             <div
-              className="row-span-3 rounded-2xl"
+              className="row-span-3 rounded-2xl h-48 md:h-full"
               style={{
                 backgroundPosition: "center",
                 backgroundSize: "cover",
@@ -125,7 +125,7 @@ function MainPage() {
             </div>
             <div></div>
             <div
-              className="row-span-3  rounded-2xl"
+              className="row-span-3  rounded-2xl h-48 md:h-full"
               style={{
                 backgroundPosition: "center",
                 backgroundSize: "cover",
@@ -136,7 +136,7 @@ function MainPage() {
               {" "}
             </div>
             <div
-              className="rounded-2xl"
+              className="rounded-2xl h-48 md:h-full"
               style={{
                 backgroundPosition: "center",
                 backgroundSize: "cover",
@@ -149,7 +149,7 @@ function MainPage() {
             <div></div>
           </div>
         </div>
-        <div className="flex flex-col pr-60">
+        <div className="flex flex-col w-full md:w-1/2 px-10 md:pl-20">
           <h4 className="text-sm text-green-600">Premium Service</h4>
           <h2 className="text-3xl font-medium text-green-600">
             스마트한 세무서비스
@@ -250,7 +250,7 @@ function MainPage() {
             <h4 className="text-sm text-green-600">Service</h4>
             <h1 className="text-3xl font-bold">다양한 세무서비스</h1>
           </div>
-          <div className="grid grid-cols-4 gap-4 pb-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 pb-10">
             <div className="flex flex-col justify-center items-center">
               <img
                 src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
