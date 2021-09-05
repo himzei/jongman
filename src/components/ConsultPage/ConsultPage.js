@@ -53,7 +53,7 @@ function ConsultPage() {
         </h3>
       </div>
       <div className="py-10 bg-blue-500 flex justify-center">
-        <div className="grid grid-cols-2 gap-10">
+        <div className="grid gird-cols-1 md:grid-cols-2 gap-10">
           <div className="w-96 text-center flex flex-col justify-center items-center border-1 border-blue-400 rounded-xl py-10">
             <div className="text-9xl">
               <FcAddressBook />
@@ -73,7 +73,7 @@ function ConsultPage() {
         <div className="w-full md:w-1/2">
           <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-5 w-full h-full gap-3 w-1/2">
             <div
-              className="row-span-3 rounded-2xl"
+              className="row-span-3 rounded-2xl h-48 md:h-full"
               style={{
                 backgroundPosition: "center",
                 backgroundSize: "cover",
@@ -82,7 +82,7 @@ function ConsultPage() {
               }}
             ></div>
             <div
-              className="rounded-2xl"
+              className="rounded-2xl h-48 md:h-full"
               style={{
                 backgroundPosition: "center",
                 backgroundSize: "cover",
@@ -91,7 +91,7 @@ function ConsultPage() {
               }}
             ></div>
             <div
-              className="row-span-3 rounded-2xl"
+              className="row-span-3 rounded-2xl h-48 md:h-full"
               style={{
                 backgroundPosition: "center",
                 backgroundSize: "cover",
@@ -102,7 +102,7 @@ function ConsultPage() {
               {" "}
             </div>
             <div
-              className="row-span-2 rounded-2xl"
+              className="row-span-2 rounded-2xl h-48 md:h-full"
               style={{
                 backgroundPosition: "center",
                 backgroundSize: "cover",
